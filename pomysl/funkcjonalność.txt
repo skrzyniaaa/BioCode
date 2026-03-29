@@ -12,3 +12,4 @@ wyświetlanie najnowszych komunikatów dla użytkowników
 logowanie za pomocą login: admin, hasło: 1234(skoplikowane hehe)
 
 2. Aplikacja ma połączenie z bazą danych więc będzie trzeba się pobawić, uruchowmić XAMPA :c
+3. Okna logowania oraz rejestracji umieszczone charakterystycznie po lewej stronie, a po prawej odpowiednio dodane zdjecia lun samo logo apliakcji BioCode
