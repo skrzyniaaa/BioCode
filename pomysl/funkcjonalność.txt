@@ -1,0 +1,14 @@
+1. OKNO DOMYŚLNE: App.jsx 
+bez konta: 
+- 20 fiszek na dzień
+- możliowść utworzenia konta lub zalogowania w sekcji konto
+z kontem:
+- fiszki
+- dodatkowe tryby typu tetris hehe
+- możliwość wylogowania
+konto admina:
+wszelkie opcje w tym dodtęp do bazy danych uzytkowników, edycja/usuwanie
+wyświetlanie najnowszych komunikatów dla użytkowników
+logowanie za pomocą login: admin, hasło: 1234(skoplikowane hehe)
+
+2. Aplikacja ma połączenie z bazą danych więc będzie trzeba się pobawić, uruchowmić XAMPA :c
