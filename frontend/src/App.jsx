@@ -1,120 +1,66 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
 import './App.css'
+import logo from './assets/logo.jpg'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
+    <div className="app">
+      {/* Navbar */}
+      <nav className="navbar">
+        <div className="nav-left">
+          <img src={logo} alt="BioCode Logo" className="logo" />
+          <h1>BioCode</h1>
         </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
 
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
+        <div className="nav-center">
+          <a href="#" className="nav-link active">Główna</a>
+          <a href="#" className="nav-link">Fiszki</a>
+          <a href="#" className="nav-link">Quiz</a>
         </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+        <div className="nav-right">
+          <a href="#" className="nav-link">Konto</a>
+          <a href="#" className="nav-link">Kontakt</a>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <main className="hero">
+        <div className="hero-content">
+          <h2>Witaj w BioCode</h2>
+          <p>Aplikacja stworzona do przygotowania się do egzaminu praktycznego <strong>INF.04</strong></p>
+          
+         
+        </div>
+      </main>
+
+      {/* Footer */}
+      <footer className="footer">
+        <div className="creators">
+          <h3>Twórcy BioCode</h3>
+          <p>Stworzone z pasją do nauki</p>
+          
+          <div className="creators-list">
+            <div className="creator">
+              <div className="circle">S</div>
+              <p>Skrzniaaa<br /><span>Developer</span></p>
+            </div>
+            <div className="creator">
+              <div className="circle">K</div>
+              <p>Kocu<br /><span>Developer</span></p>
+            </div>
+            <div className="creator">
+              <div className="circle">D</div>
+              <p>Dobi<br /><span>Developer</span></p>
+            </div>
+          </div>
+        </div>
+
+        <div className="copyright">
+          © 2026 BioCode. Wszystkie prawa zastrzeżone.
+        </div>
+      </footer>
+    </div>
   )
 }
 
