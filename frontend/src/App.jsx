@@ -2,10 +2,11 @@ import { useState } from 'react'
 import './App.css'
 import logo from './assets/logo.jpg'
 
+
 function App() {
   return (
     <div className="app">
-      {/* Navbar */}
+      {/* Nawigacja */}
       <nav className="navbar">
         <div className="nav-left">
           <img src={logo} alt="BioCode Logo" className="logo" />
@@ -13,9 +14,10 @@ function App() {
         </div>
 
         <div className="nav-center">
-          <a href="#" className="nav-link active">Główna</a>
-          <a href="#" className="nav-link">Fiszki</a>
-          <a href="#" className="nav-link">Quiz</a>
+          <a href="App.jsx" className="nav-link active">Główna</a>
+          <a href="#" className="nav-link">Nauka</a>
+          <a href="#" className="nav-link">Test</a>
+          <a href="#" className="nav-link">Egzaminy</a>
         </div>
 
         <div className="nav-right">
@@ -24,7 +26,7 @@ function App() {
         </div>
       </nav>
 
-      {/* Hero Section */}
+      {/* Środek */}
       <main className="hero">
         <div className="hero-content">
           <h2>Witaj w BioCode</h2>
@@ -34,7 +36,7 @@ function App() {
         </div>
       </main>
 
-      {/* Footer */}
+      {/* Stopka */}
       <footer className="footer">
         <div className="creators">
           <h3>Twórcy BioCode</h3>
@@ -42,16 +44,16 @@ function App() {
           
           <div className="creators-list">
             <div className="creator">
-              <div className="circle">S</div>
-              <p>Skrzniaaa<br /><span>Developer</span></p>
+              <div className="circle">MS</div>
+              <p>Mateusz Skrzyszowski<br /><span>Developer</span></p>
             </div>
             <div className="creator">
-              <div className="circle">K</div>
-              <p>Kocu<br /><span>Developer</span></p>
+              <div className="circle">MK</div>
+              <p>Mateusz Kocniowski<br /><span>Developer</span></p>
             </div>
             <div className="creator">
-              <div className="circle">D</div>
-              <p>Dobi<br /><span>Developer</span></p>
+              <div className="circle">AD</div>
+              <p>Adrian Dobosz<br /><span>Developer</span></p>
             </div>
           </div>
         </div>
