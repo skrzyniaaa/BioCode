@@ -1,0 +1,16 @@
+1.Nazwa projektu BioCode  Mateusz Kocniowski Mateusz Skrzyszowski Adrian Dobosz
+
+2.Aplikacja została stworzona z myślą o uczniach przygotowujących się do praktycznego egzaminu zawodowego INF.04. Jej głównym celem jest ułatwienie nauki poprzez uporządkowanie materiału, monitorowanie postępów oraz umożliwienie efektywnego powtarzania najważniejszych zagadnień.
+Użytkownik ma dostęp do zestawów zadań praktycznych, quizów oraz przykładowych arkuszy egzaminacyjnych, które odwzorowują rzeczywiste warunki egzaminu. Aplikacja umożliwia śledzenie postępów w nauce, wskazuje obszary wymagające poprawy oraz generuje listę tematów do powtórki. Dodatkowo może zawierać funkcje takie jak plan nauki czy odliczanie czasu do egzaminu, co pomaga w lepszej organizacji przygotowań.
+Projekt skierowany jest głównie do uczniów techników informatycznych oraz programistycznych ale może być również wykorzystywany przez nauczycieli jako narzędzie wspomagające proces nauczania.
+
+3Aplikacja została wykonana z wykorzystaniem biblioteki React, która umożliwia tworzenie nowoczesnych, dynamicznych interfejsów użytkownika w oparciu o komponenty. Dzięki temu kod aplikacji jest czytelny, modularny i łatwy w rozwijaniu oraz utrzymaniu.
+Do stylizacji interfejsu wykorzystano język CSS, który odpowiada za wygląd aplikacji, jej układ oraz responsywność, co pozwala na poprawne wyświetlanie strony na różnych urządzeniach (komputerach, tabletach i smartfonach).
+
+Środowiskiem programistycznym był edytor kodu Visual Studio Code, a do zarządzania projektem oraz jego wersjonowania wykorzystano system kontroli wersji Git. 
+
+4.?
+5.?
+6.
+7.?
+8.?
