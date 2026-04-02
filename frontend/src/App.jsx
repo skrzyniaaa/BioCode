@@ -10,7 +10,7 @@ function App() {
       <nav className="navbar">
         <div className="nav-left">
           <img src={logo} alt="BioCode Logo" className="logo" />
-          <h1>BioCode</h1>
+          <h2>BioCode</h2>
         </div>
 
         <div className="nav-center">
