@@ -1,7 +1,7 @@
 const Egzaminy_prob = () => {
   return (
     <div className="exam-list-container">
-      <h2 className="section-title">📋 Egzaminy próbne</h2>
+      <h2 className="section-title">Egzaminy próbne</h2>
       <div className="exam-cards">
         <div className="exam-card">
           <h3>Egzamin 1</h3>
