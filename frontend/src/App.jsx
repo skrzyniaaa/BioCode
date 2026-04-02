@@ -17,7 +17,7 @@ function App() {
           <a href="App.jsx" className="nav-link active">Główna</a>
           <a href="#" className="nav-link">Nauka</a>
           <a href="#" className="nav-link">Test</a>
-          <a href="#" className="nav-link">Egzaminy</a>
+          <a href="#" className="nav-link">Egzaminy próbne</a>
         </div>
 
         <div className="nav-right">
