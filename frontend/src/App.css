@@ -164,3 +164,71 @@ body {
   color: #555;
   font-size: 14px;
 }
+
+/* Sekcja egzaminów próbnych */
+.exam-list-container {
+  padding: 60px 5%;
+  background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+  text-align: center;
+}
+
+.section-title {
+  font-size: 36px;
+  color: #00ff9d;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+.exam-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.exam-card {
+  background-color: #111111;
+  border: 1px solid #2a2a2a;
+  border-radius: 20px;
+  padding: 30px 25px;
+  width: 280px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.exam-card:hover {
+  transform: translateY(-8px);
+  border-color: #00ff9d;
+  box-shadow: 0 10px 25px rgba(0, 255, 157, 0.1);
+}
+
+.exam-card h3 {
+  font-size: 28px;
+  color: #00ff9d;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.exam-card p {
+  color: #b0b0b0;
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+.btn-exam {
+  background-color: transparent;
+  border: 2px solid #00ff9d;
+  color: #00ff9d;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 14px;
+}
+
+.btn-exam:hover {
+  background-color: #00ff9d;
+  color: #0a0a0a;
+}
