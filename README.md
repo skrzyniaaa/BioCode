@@ -11,13 +11,6 @@
   <strong>Aplikacja webowa do nauki do egzaminu praktycznego INF.04</strong>
 </p>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/React-18.3-61DAFB?logo=react&logoColor=white" />
-  <img src="https://img.shields.io/badge/Vite-5.4-646CFF?logo=vite&logoColor=white" />
-  <img src="https://img.shields.io/badge/Router-6.26-CA4245?logo=reactrouter&logoColor=white" />
-  <img src="https://img.shields.io/badge/license-MIT-green" />
-</p>
-
 ---
 
 ## O projekcie
