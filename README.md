@@ -3,7 +3,7 @@
 </div>
 
 <h1 align="center">
-  <img src="frontend/public/logo1.png" alt="BioCode Logo" width="60" style="vertical-align: middle;" />
+  <img src="frontend/src/assets/logo.jpg" alt="BioCode Logo" width="60" style="vertical-align: left;" />
   BioCode
 </h1>
 
@@ -42,12 +42,5 @@ Autorzy:
 
 ---
 
-## Uruchomienie projektu lokalnie
 
-Wymagania wstępne:
-
-- Node.js w wersji 18 lub nowszej.
-- Menadżer pakietów npm lub yarn.
-
-Kroki instalacji:
 
