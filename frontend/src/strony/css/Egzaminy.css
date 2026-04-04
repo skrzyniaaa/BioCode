@@ -80,6 +80,7 @@
 }
 
 .btn.secondary.small {
+  align-items: center; 
   background-color: transparent;
   border: 2px solid #00ff9d;
   color: #00ff9d;
@@ -114,4 +115,56 @@
     grid-template-columns: 1fr;
     gap: 25px;
   }
+}
+
+/* Styl dla przycisków i linków jako przycisków */
+.btn,
+a.btn {
+  display: inline-block;
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+/* Mały wariant */
+.btn.small,
+a.btn.small {
+  padding: 6px 16px;
+  font-size: 0.85rem;
+}
+
+/* Przycisk główny (zielone tło) */
+.btn.primary,
+a.btn.primary {
+  background-color: #00ff9d;
+  color: #000;
+  border-color: #00ff9d;
+}
+
+.btn.primary:hover,
+a.btn.primary:hover {
+  background-color: #00cc7a;
+  border-color: #00cc7a;
+  transform: translateY(-2px);
+}
+
+/* Przycisk drugorzędny (przezroczysty, zielona ramka) */
+.btn.secondary,
+a.btn.secondary {
+  background-color: transparent;
+  border-color: #00ff9d;
+  color: #00ff9d;
+}
+
+.btn.secondary:hover,
+a.btn.secondary:hover {
+  background-color: #00ff9d;
+  color: #000;
+  transform: translateY(-2px);
 }

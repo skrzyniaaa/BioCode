@@ -79,7 +79,6 @@ function Egzaminy() {
                 <h3>{egz.tytul}</h3>
               </div>
               <div className="exam-actions">
-                {/* Link do strony z rozwiązaniem zamiast przycisku pobierania */}
                 <Link to={`/rozwiazanie/${egz.id}`} className="btn secondary small">
                   Rozwiązanie
                 </Link>

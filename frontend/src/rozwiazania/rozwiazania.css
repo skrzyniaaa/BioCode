@@ -1,35 +1,164 @@
-/* rozwiazania.css */
-.solution-container {
-  background-color: #0f0f0f;
-  border-radius: 24px;
-  padding: 30px;
-  margin: 30px 0;
+/* rozwiazania.css – czytelny layout, nagłówki wyśrodkowane, reszta do lewej */
+
+.page-content {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.page-title {
+  font-size: 2.8rem;
+  color: #00ff9d;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.page-subtitle {
+  font-size: 1.4rem;
+  color: #ccc;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.solution-section {
+  margin-bottom: 3rem;
+}
+
+/* Standardowy nagłówek – z lewym paskiem, wyrównany do lewej */
+.section-heading {
+  font-size: 2rem;
+  color: #00ff9d;
+  border-left: 6px solid #00ff9d;
+  padding-left: 20px;
+  margin: 2rem 0 1.5rem 0;
   text-align: left;
 }
 
-.solution-heading {
-  color: #00ff9d;
-  font-size: 1.8rem;
-  margin-top: 30px;
-  margin-bottom: 20px;
-  border-bottom: 1px solid #2a2a2a;
-  padding-bottom: 8px;
+/* Wyśrodkowany nagłówek – używany w Egzamin1.jsx */
+.section-heading.centered {
+  text-align: center;
+  border-left: none;
+  border-bottom: 2px solid #00ff9d;
+  padding-left: 0;
+  padding-bottom: 12px;
+  display: inline-block;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+/* Listy – symbole ">" po lewej, treść do lewej */
+.requirements-list,
+.compliance-list {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  background-color: #0a0a0a;
+  padding: 1.5rem 2rem;
+  border-radius: 20px;
+  list-style-type: none;
+  margin-left: 0;
+  text-align: left;
+}
+
+.requirements-list li,
+.compliance-list li {
+  margin: 0.8rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  text-align: left;
+}
+
+.requirements-list li::before,
+.compliance-list li::before {
+  content: ">";
+  color: #00ff9d;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+/* Blok kodu – pozostaje do lewej */
 .code-block {
   background-color: #1a1a1a;
   border: 1px solid #333;
-  border-radius: 16px;
-  padding: 20px;
-  margin: 20px 0;
+  border-radius: 20px;
+  padding: 1.8rem;
+  margin: 1.5rem 0;
   overflow-x: auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
 .code-block pre {
-  font-family: 'Courier New', monospace;
-  font-size: 14px;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 1rem;
+  line-height: 1.5;
   color: #e0e0e0;
   margin: 0;
   white-space: pre-wrap;
   word-wrap: break-word;
+  text-align: left;
+}
+
+/* Karty wyjaśnień – tekst do lewej */
+.explanation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.8rem;
+  margin: 2rem 0;
+}
+
+.explanation-card {
+  background-color: #0f0f0f;
+  border: 1px solid #2a2a2a;
+  border-radius: 24px;
+  padding: 1.5rem;
+  transition: transform 0.2s;
+  text-align: left;
+}
+
+.explanation-card:hover {
+  transform: translateY(-4px);
+  border-color: #00ff9d;
+}
+
+.explanation-card h4 {
+  color: #00ff9d;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  text-align: left;
+}
+
+.explanation-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #ddd;
+  text-align: left;
+}
+
+/* Przycisk powrotu – wyśrodkowany */
+.back-button {
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  padding: 12px 28px;
+  display: inline-block;
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 2rem;
+  }
+  .page-subtitle {
+    font-size: 1.1rem;
+  }
+  .section-heading,
+  .section-heading.centered {
+    font-size: 1.6rem;
+  }
+  .code-block pre {
+    font-size: 0.85rem;
+  }
+  .explanation-grid {
+    grid-template-columns: 1fr;
+  }
 }
