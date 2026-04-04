@@ -1,11 +1,11 @@
-function Nauka() {
+function Konto() {
   return (
     <div className="page-container">
       <div className="page-content">
-        <h2>Nauka</h2>
+        <h2>Moje Konto</h2>
       </div>
     </div>
   );
 }
 
-export default Nauka;
+export default Konto;

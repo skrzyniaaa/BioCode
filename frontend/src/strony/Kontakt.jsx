@@ -1,11 +1,11 @@
-function Nauka() {
+function Kontakt() {
   return (
     <div className="page-container">
       <div className="page-content">
-        <h2>Nauka</h2>
+        <h2>Kontakt</h2>
       </div>
     </div>
   );
 }
 
-export default Nauka;
+export default Kontakt;
