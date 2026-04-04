@@ -1,0 +1,117 @@
+/* Egzaminy.css – siatka 3 kolumn, czytelny układ */
+
+.exams-section {
+  padding: 40px 5%;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #aaa;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+/* Siatka 3 kolumn – zachowana proporcja 3x3 (trzy kolumny, dowolna liczba wierszy) */
+.exams-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin: 40px 0;
+}
+
+/* Karta egzaminu */
+.exam-card {
+  background-color: #111;
+  border: 1px solid #2a2a2a;
+  border-radius: 28px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: none; /* brak efektu najechania na kartę */
+}
+
+/* Nagłówek karty */
+.exam-header {
+  margin-bottom: 28px;
+}
+
+/* Oznaczenie "Egzamin X" */
+.exam-badge {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background-color: rgba(0, 255, 157, 0.15);
+  color: #00ff9d;
+  padding: 6px 14px;
+  border-radius: 30px;
+  display: inline-block;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+/* Tytuł egzaminu */
+.exam-card h3 {
+  font-size: 1.3rem;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+/* Przyciski akcji */
+.exam-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+/* Style dla małych przycisków */
+.btn.small {
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  flex: 1;
+  text-align: center;
+}
+
+.btn.secondary.small {
+  background-color: transparent;
+  border: 2px solid #00ff9d;
+  color: #00ff9d;
+}
+
+.btn.secondary.small:hover {
+  background-color: #00ff9d;
+  color: #000;
+}
+
+.btn.primary.small {
+  background-color: #00ff9d;
+  border: 2px solid #00ff9d;
+  color: #000;
+}
+
+.btn.primary.small:hover {
+  background-color: #00cc7a;
+  border-color: #00cc7a;
+}
+
+/* Responsywność: dla średnich ekranów – 2 kolumny, dla małych – 1 kolumna */
+@media (max-width: 900px) {
+  .exams-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .exams-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+}
