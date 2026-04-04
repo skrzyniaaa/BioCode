@@ -5,33 +5,41 @@ import Test from './strony/Test';
 import Egzaminy from './strony/Egzaminy';
 import Konto from './strony/Konto';
 import Kontakt from './strony/Kontakt';
+
+// Poprawne ścieżki – pliki są w ./komponenty/rozwiazania/
+import Egzamin1 from './rozwiazania/Egzamin1';
+import Egzamin2 from './rozwiazania/Egzamin2';
+import Egzamin3 from './rozwiazania/Egzamin3';
+import Egzamin4 from './rozwiazania/Egzamin4';
+import Egzamin5 from './rozwiazania/Egzamin5';
+import Egzamin6 from './rozwiazania/Egzamin6';
+import Egzamin7 from './rozwiazania/Egzamin7';
+import Egzamin8 from './rozwiazania/Egzamin8';
+import Egzamin9 from './rozwiazania/Egzamin9';
+
 import './App.css';
 
 function App() {
   return (
     <Router>
       <div className="app">
-        {/* Nawigacja */}
         <nav className="navbar">
           <div className="nav-left">
-            <img src="src/assets/logo.jpg" alt="BioCode" className="logo" />
+            <img src="/src/assets/logo.jpg" alt="BioCode" className="logo" />
             <h1>BioCode</h1>
           </div>
-          
           <div className="nav-center">
             <NavLink to="/" className="nav-link">Główna</NavLink>
             <NavLink to="/nauka" className="nav-link">Nauka</NavLink>
             <NavLink to="/test" className="nav-link">Test</NavLink>
             <NavLink to="/egzaminy" className="nav-link">Egzaminy</NavLink>
           </div>
-          
           <div className="nav-right">
             <NavLink to="/konto" className="nav-link">Konto</NavLink>
             <NavLink to="/kontakt" className="nav-link">Kontakt</NavLink>
           </div>
         </nav>
 
-        {/* Routing podstron */}
         <Routes>
           <Route path="/" element={<Glowna />} />
           <Route path="/nauka" element={<Nauka />} />
@@ -39,35 +47,40 @@ function App() {
           <Route path="/egzaminy" element={<Egzaminy />} />
           <Route path="/konto" element={<Konto />} />
           <Route path="/kontakt" element={<Kontakt />} />
+          <Route path="/rozwiazanie/1" element={<Egzamin1 />} />
+          <Route path="/rozwiazanie/2" element={<Egzamin2 />} />
+          <Route path="/rozwiazanie/3" element={<Egzamin3 />} />
+          <Route path="/rozwiazanie/4" element={<Egzamin4 />} />
+          <Route path="/rozwiazanie/5" element={<Egzamin5 />} />
+          <Route path="/rozwiazanie/6" element={<Egzamin6 />} />
+          <Route path="/rozwiazanie/7" element={<Egzamin7 />} />
+          <Route path="/rozwiazanie/8" element={<Egzamin8 />} />
+          <Route path="/rozwiazanie/9" element={<Egzamin9 />} />
         </Routes>
 
-        {/* Stopka */}
-      <footer className="footer">
-        <div className="creators">
-          <h3>Twórcy BioCode</h3>
-          <p>Stworzone z pasją do nauki</p>
-          
-          <div className="creators-list">
-            <div className="creator">
-              <div className="circle">MS</div>
-              <p>Mateusz Skrzyszowski<br /><span>Developer</span></p>
+        <footer className="footer">
+          <div className="creators">
+            <h3>Twórcy</h3>
+            <div className="creators-list">
+              <div className="creator">
+                <div className="circle">A</div>
+                <span>Adrian Dobosz</span>
+              </div>
+              <div className="creator">
+                <div className="circle">M</div>
+                <span>Mateusz Kocniowski</span>
+              </div>
+              <div className="creator">
+                <div className="circle">M</div>
+                <span>Mateusz Skrzyszowski</span>
+              </div>
             </div>
-            <div className="creator">
-              <div className="circle">MK</div>
-              <p>Mateusz Kocniowski<br /><span>Developer</span></p>
-            </div>
-            <div className="creator">
-              <div className="circle">AD</div>
-              <p>Adrian Dobosz<br /><span>Developer</span></p>
+            <div className="copyright">
+              &copy; 2025 BioCode - Wszystkie prawa zastrzeżone
             </div>
           </div>
-        </div>
-
-        <div className="copyright">
-          © 2026 BioCode. Wszystkie prawa zastrzeżone.
-        </div>
-      </footer>
-    </div>
+        </footer>
+      </div>
     </Router>
   );
 }

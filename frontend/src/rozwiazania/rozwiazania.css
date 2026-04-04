@@ -1,0 +1,35 @@
+/* rozwiazania.css */
+.solution-container {
+  background-color: #0f0f0f;
+  border-radius: 24px;
+  padding: 30px;
+  margin: 30px 0;
+  text-align: left;
+}
+
+.solution-heading {
+  color: #00ff9d;
+  font-size: 1.8rem;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #2a2a2a;
+  padding-bottom: 8px;
+}
+
+.code-block {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 16px;
+  padding: 20px;
+  margin: 20px 0;
+  overflow-x: auto;
+}
+
+.code-block pre {
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  color: #e0e0e0;
+  margin: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
