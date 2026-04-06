@@ -1,12 +1,15 @@
-import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, NavLink, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import Glowna from './strony/Glowna';
 import Nauka from './strony/Nauka';
 import Test from './strony/Test';
 import Egzaminy from './strony/Egzaminy';
 import Konto from './strony/Konto';
 import Kontakt from './strony/Kontakt';
+import Gra from './strony/Gra';
+import FiszkiNormalne from './strony/FiszkiNormalne';
+import FiszkiGra from './strony/FiszkiGra';
 
-// Poprawne ścieżki – pliki są w ./komponenty/rozwiazania/
 import Egzamin1 from './rozwiazania/Egzamin1';
 import Egzamin2 from './rozwiazania/Egzamin2';
 import Egzamin3 from './rozwiazania/Egzamin3';
@@ -19,13 +22,38 @@ import Egzamin9 from './rozwiazania/Egzamin9';
 
 import './App.css';
 
+// Komponent obsługujący kliknięcia w logo
+function Logo() {
+  const [clickCount, setClickCount] = useState(0);
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    const newCount = clickCount + 1;
+    setClickCount(newCount);
+    if (newCount === 5) {
+      setClickCount(0);
+      navigate('/gra');
+    }
+  };
+
+  return (
+    <img
+      src="/src/assets/logo.jpg"
+      alt="BioCode"
+      className="logo"
+      onClick={handleClick}
+      style={{ cursor: 'pointer' }}
+    />
+  );
+}
+
 function App() {
   return (
     <Router>
       <div className="app">
         <nav className="navbar">
           <div className="nav-left">
-            <img src="/src/assets/logo.jpg" alt="BioCode" className="logo" />
+            <Logo />
             <h1>BioCode</h1>
           </div>
           <div className="nav-center">
@@ -47,6 +75,7 @@ function App() {
           <Route path="/egzaminy" element={<Egzaminy />} />
           <Route path="/konto" element={<Konto />} />
           <Route path="/kontakt" element={<Kontakt />} />
+          <Route path="/gra" element={<Gra />} />
           <Route path="/rozwiazanie/1" element={<Egzamin1 />} />
           <Route path="/rozwiazanie/2" element={<Egzamin2 />} />
           <Route path="/rozwiazanie/3" element={<Egzamin3 />} />
@@ -56,6 +85,8 @@ function App() {
           <Route path="/rozwiazanie/7" element={<Egzamin7 />} />
           <Route path="/rozwiazanie/8" element={<Egzamin8 />} />
           <Route path="/rozwiazanie/9" element={<Egzamin9 />} />
+          <Route path="/test/fiszki" element={<FiszkiNormalne />} />
+          <Route path="/test/gra" element={<FiszkiGra />} />
         </Routes>
 
         <footer className="footer">
