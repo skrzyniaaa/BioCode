@@ -16,7 +16,7 @@ body {
   flex-direction: column;
 }
 
-/* Nawigacja */
+/* ==================== NAWIGACJA ==================== */
 .navbar {
   background-color: #111111;
   padding: 1rem 5%;
@@ -53,6 +53,7 @@ body {
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
+  cursor: pointer;
 }
 
 .nav-link:hover,
@@ -60,7 +61,7 @@ body {
   color: #00ff9d;
 }
 
-/* Środek */
+/* ==================== HERO (Strona Główna) ==================== */
 .hero {
   flex: 1;
   display: flex;
@@ -83,44 +84,88 @@ body {
   margin: 0 auto 40px;
 }
 
-.btn {
-  padding: 14px 32px;
-  font-size: 18px;
-  border: none;
-  border-radius: 8px;
+/* ==================== SEKCY NAUKA ==================== */
+.nauka-container {
+  padding: 40px 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nauka-title {
+  text-align: center;
+  color: #00ff9d;
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.nauka-subtitle {
+  text-align: center;
+  color: #aaa;
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-bottom: 50px;
+}
+
+.category-card {
+  background-color: #1a1a1a;
+  padding: 30px;
+  border-radius: 12px;
+  border: 2px solid #333;
   cursor: pointer;
-  margin: 0 10px;
   transition: all 0.3s;
 }
 
-.btn.primary {
-  background-color: #00ff9d;
-  color: black;
-  font-weight: bold;
+.category-card:hover {
+  border-color: #00ff9d;
+  transform: translateY(-5px);
 }
 
-.btn.primary:hover {
-  background-color: #00cc7a;
-  transform: translateY(-3px);
+.category-card.active {
+  border-color: #00ff9d;
+  background-color: #112211;
 }
 
-.btn.secondary {
-  background-color: transparent;
-  border: 2px solid #00ff9d;
+.category-card h3 {
   color: #00ff9d;
+  margin-bottom: 12px;
 }
 
-.btn.secondary:hover {
-  background-color: #00ff9d;
-  color: black;
+.materials-section {
+  background-color: #111;
+  padding: 35px;
+  border-radius: 12px;
+  border: 1px solid #00ff9d;
+  margin-top: 30px;
 }
 
-/* Stopka */
+.materials-section h2 {
+  color: #00ff9d;
+  margin-bottom: 20px;
+}
+
+.materials-list ul {
+  line-height: 2;
+  font-size: 17px;
+  padding-left: 20px;
+}
+
+.materials-list li {
+  margin-bottom: 8px;
+}
+
+/* ==================== STOPKA ==================== */
 .footer {
   background-color: #0a0a0a;
   padding: 40px 5% 20px;
   border-top: 1px solid #1f1f1f;
   text-align: center;
+  margin-top: auto;
 }
 
 .creators h3 {
