@@ -1,4 +1,3 @@
-/* Test.css – wersja bez emotek, bez efektu poświaty */
 .test-section {
   padding: 40px 5%;
   min-height: 60vh;
@@ -30,15 +29,12 @@
 .test-card:hover {
   transform: translateY(-10px);
   border-color: #00ff9d;
-  /* box-shadow usunięty – brak poświaty */
 }
 
-/* Opcjonalna ikona – ukryta */
 .test-card-icon {
   display: none;
 }
 
-/* Akcent – zielona kreska nad tytułem */
 .test-card::before {
   content: "";
   width: 50px;
@@ -64,7 +60,6 @@
   margin: 0;
 }
 
-/* Responsywność */
 @media (max-width: 850px) {
   .test-cards {
     gap: 30px;
