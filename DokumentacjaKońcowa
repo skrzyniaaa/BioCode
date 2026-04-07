@@ -1,0 +1,151 @@
+DOKUMENTACJA PROJEKTU
+1. Strona tytułowa
+
+Nazwa projektu:
+Aplikacja webowa wspomagająca naukę do egzaminu zawodowego INF.04 – BioCode
+
+Twórcy:
+Adrian Dobosz
+Mateusz Kocniowski
+Mateusz Skrzyszowski
+
+Data wykonania:
+2026
+
+2. Ogólny opis projektu
+
+Celem projektu było stworzenie aplikacji webowej wspomagającej naukę do egzaminu zawodowego INF.04. 
+Aplikacja umożliwia użytkownikowi przeglądanie arkuszy egzaminacyjnych, zapoznanie się z rozwiązaniami oraz sprawdzanie swojej wiedzy za pomocą fiszek i trybu gry.
+
+System został zaprojektowany z myślą o uczniach kierunków informatycznych przygotowujących się do 
+egzaminu zawodowego. Głównym założeniem było stworzenie przejrzystego, estetycznego i intuicyjnego narzędzia edukacyjnego.
+
+Najważniejsze funkcjonalności aplikacji:
+
+przeglądanie egzaminów zawodowych (INF.04),
+pobieranie arkuszy egzaminacyjnych w formacie PDF,
+dostęp do przykładowych rozwiązań zadań,
+nauka poprzez fiszki,
+tryb gry z punktacją i systemem życia,
+pasek postępu i system serii poprawnych odpowiedzi,
+ukryta funkcjonalność (easter egg – gra).
+
+3. Opis wykorzystanej technologii
+
+
+
+Wykorzystane technologie:
+
+JavaScript – logika aplikacji
+React – budowa interfejsu użytkownika
+React Router – obsługa nawigacji między podstronami
+HTML (JSX) – struktura komponentów
+CSS – stylowanie interfejsu użytkownika
+
+Środowisko programistyczne:
+
+Visual Studio Code – edytor kodu źródłowego
+Node.js – środowisko uruchomieniowe
+Vite – narzędzie do uruchamiania i budowy aplikacji
+
+Zastosowane mechanizmy:
+
+React (useState, useNavigate)
+komponentowa budowa aplikacji
+routing (dynamiczne przechodzenie między widokami)
+dynamiczne renderowanie danych (np. lista egzaminów, pytania)
+obsługa zdarzeń użytkownika (kliknięcia, wybór odpowiedzi)
+
+Aplikacja działa lokalnie i nie korzysta z zewnętrznych API.
+
+4. Instrukcja techniczna
+
+Aby uruchomić aplikację należy:
+
+Zainstalować:
+Node.js
+Visual Studio Code
+Otworzyć folder projektu w programie Visual Studio Code
+Uruchomić terminal (Terminal → New Terminal)
+Zainstalować wymagane pakiety:
+npm install
+Uruchomić aplikację:
+npm run dev
+Otworzyć przeglądarkę i wpisać:
+http://localhost:5173
+
+
+5. Instrukcja użytkownika
+
+Po uruchomieniu aplikacji użytkownik widzi stronę główną.
+
+Nawigacja:
+Główna – strona startowa aplikacji
+Nauka – materiały edukacyjne
+Fiszki – test wiedzy
+Egzaminy – arkusze egzaminacyjne
+Kontakt – informacje o twórcach
+
+
+Moduł: Egzaminy
+
+Użytkownik może:
+
+przeglądać listę egzaminów z różnych lat,
+pobrać arkusz egzaminacyjny w formacie PDF,
+przejść do rozwiązania konkretnego egzaminu.
+
+
+Moduł: Rozwiązania
+
+Zawiera:
+
+opis zadania egzaminacyjnego,
+kod rozwiązania,
+szczegółowe wyjaśnienie działania programu,
+omówienie kluczowych elementów.
+
+
+Moduł: Fiszki
+
+Użytkownik:
+
+odpowiada na pytania testowe,
+wybiera jedną z czterech odpowiedzi (A–D),
+otrzymuje informację zwrotną o poprawności odpowiedzi.
+Moduł: Gra (FiszkiGra)
+
+Zawiera dodatkowe funkcje:
+
+system punktów,
+system życia (3 próby),
+licznik serii poprawnych odpowiedzi,
+pasek postępu,
+ekran końcowy z wynikiem.
+Funkcja dodatkowa
+
+W aplikacji zaimplementowano ukrytą funkcję (tzw. easter egg).
+Po kliknięciu 5 razy w logo użytkownik zostaje przeniesiony do trybu gry.
+
+6. Link do repozytorium
+
+https://github.com/skrzyniaaa/BioCode
+
+
+7. Diagram aktywności (opis)
+
+Podział pracy w projekcie:
+
+tworzenie interfejsu użytkownika (React, CSS),
+implementacja logiki aplikacji (JavaScript),
+przygotowanie treści (egzaminy, pytania),
+testowanie działania aplikacji,
+tworzenie dokumentacji projektu.
+
+Aktywność członków zespołu widoczna jest w repozytorium GitHub w historii commitów.
+
+8. Bibliografia i źródła
+dokumentacja React – https://react.dev
+dokumentacja JavaScript – https://developer.mozilla.org
+materiały egzaminacyjne CKE
+własne opracowania
