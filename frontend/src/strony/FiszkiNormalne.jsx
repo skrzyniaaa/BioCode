@@ -1,4 +1,3 @@
-// frontend/src/strony/FiszkiNormalne.jsx
 import { useState } from 'react';
 import './css/FiszkiNormalne.css';
 

@@ -1,211 +1,115 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #0f0f0f;
-  color: #e0e0e0;
-}
-
-.app {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-/* ==================== NAWIGACJA ==================== */
-.navbar {
-  background-color: #111111;
-  padding: 1rem 5%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid #1f1f1f;
-}
-
-.nav-left {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.logo {
-  height: 55px;
-  width: auto;
-}
-
-.nav-left h1 {
-  color: #00ff9d;
-  font-size: 28px;
-  font-weight: 700;
-}
-
-.nav-center, .nav-right {
-  display: flex;
-  gap: 30px;
-}
-
-.nav-link {
-  color: #cccccc;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
-  cursor: pointer;
-}
-
-.nav-link:hover,
-.nav-link.active {
-  color: #00ff9d;
-}
-
-/* ==================== HERO (Strona Główna) ==================== */
-.hero {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 0 20px;
-  background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
-}
-
-.hero-content h2 {
-  font-size: 48px;
-  margin-bottom: 16px;
-  color: #00ff9d;
-}
-
-.hero-content p {
-  font-size: 22px;
-  max-width: 700px;
-  margin: 0 auto 40px;
-}
-
-/* ==================== SEKCY NAUKA ==================== */
 .nauka-container {
   padding: 40px 5%;
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
 .nauka-title {
   text-align: center;
   color: #00ff9d;
-  font-size: 42px;
-  margin-bottom: 10px;
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
 }
 
 .nauka-subtitle {
   text-align: center;
   color: #aaa;
-  font-size: 20px;
-  margin-bottom: 40px;
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
 }
 
 .categories-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
   margin-bottom: 50px;
 }
 
 .category-card {
-  background-color: #1a1a1a;
-  padding: 30px;
-  border-radius: 12px;
-  border: 2px solid #333;
+  background: #111;
+  border: 1px solid #2a2a2a;
+  border-radius: 28px;
+  padding: 30px 25px;
+  width: 260px;
+  text-align: center;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
 }
 
 .category-card:hover {
+  transform: translateY(-6px);
   border-color: #00ff9d;
-  transform: translateY(-5px);
 }
 
 .category-card.active {
   border-color: #00ff9d;
-  background-color: #112211;
+  background: #1a1a1a;
+  box-shadow: 0 0 15px rgba(0,255,157,0.2);
 }
 
 .category-card h3 {
   color: #00ff9d;
+  font-size: 1.8rem;
   margin-bottom: 12px;
 }
 
+.category-card p {
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
 .materials-section {
-  background-color: #111;
-  padding: 35px;
-  border-radius: 12px;
-  border: 1px solid #00ff9d;
-  margin-top: 30px;
+  background: #0a0a0a;
+  border-radius: 32px;
+  padding: 30px;
+  margin-top: 20px;
+  border: 1px solid #2a2a2a;
 }
 
 .materials-section h2 {
   color: #00ff9d;
-  margin-bottom: 20px;
-}
-
-.materials-list ul {
-  line-height: 2;
-  font-size: 17px;
+  font-size: 2rem;
+  margin-bottom: 25px;
+  border-left: 5px solid #00ff9d;
   padding-left: 20px;
 }
 
-.materials-list li {
-  margin-bottom: 8px;
+.materials-section h3 {
+  color: #eee;
+  font-size: 1.5rem;
+  margin: 30px 0 15px 0;
 }
 
-/* ==================== STOPKA ==================== */
-.footer {
-  background-color: #0a0a0a;
-  padding: 40px 5% 20px;
-  border-top: 1px solid #1f1f1f;
-  text-align: center;
-  margin-top: auto;
+.materials-section pre {
+  background: #111;
+  border: 1px solid #2a2a2a;
+  border-radius: 20px;
+  padding: 20px;
+  overflow-x: auto;
+  margin: 20px 0;
 }
 
-.creators h3 {
-  color: #00ff9d;
-  margin-bottom: 8px;
+.materials-section code {
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.95rem;
+  color: #e0e0e0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
-.creators-list {
-  display: flex;
-  justify-content: center;
-  gap: 60px;
-  margin: 30px 0;
-  flex-wrap: wrap;
-}
-
-.creator {
-  text-align: center;
-}
-
-.circle {
-  width: 70px;
-  height: 70px;
-  background-color: #00ff9d;
-  color: black;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 28px;
-  font-weight: bold;
-  margin: 0 auto 12px;
-}
-
-.creator span {
-  font-size: 14px;
-  color: #888;
-}
-
-.copyright {
-  margin-top: 30px;
-  color: #555;
-  font-size: 14px;
+@media (max-width: 800px) {
+  .nauka-title {
+    font-size: 2rem;
+  }
+  .category-card {
+    width: 100%;
+    max-width: 300px;
+  }
+  .materials-section h2 {
+    font-size: 1.6rem;
+  }
+  .materials-section h3 {
+    font-size: 1.3rem;
+  }
 }

@@ -4,7 +4,6 @@ import Glowna from './strony/Glowna';
 import Nauka from './strony/Nauka';
 import Test from './strony/Test';
 import Egzaminy from './strony/Egzaminy';
-import Konto from './strony/Konto';
 import Kontakt from './strony/Kontakt';
 import Gra from './strony/Gra';
 import FiszkiNormalne from './strony/FiszkiNormalne';
@@ -22,7 +21,6 @@ import Egzamin9 from './rozwiazania/Egzamin9';
 
 import './App.css';
 
-// Komponent obsługujący kliknięcia w logo
 function Logo() {
   const [clickCount, setClickCount] = useState(0);
   const navigate = useNavigate();
@@ -59,11 +57,10 @@ function App() {
           <div className="nav-center">
             <NavLink to="/" className="nav-link">Główna</NavLink>
             <NavLink to="/nauka" className="nav-link">Nauka</NavLink>
-            <NavLink to="/test" className="nav-link">Test</NavLink>
+            <NavLink to="/test" className="nav-link">Fiszki</NavLink>
             <NavLink to="/egzaminy" className="nav-link">Egzaminy</NavLink>
           </div>
           <div className="nav-right">
-            <NavLink to="/konto" className="nav-link">Konto</NavLink>
             <NavLink to="/kontakt" className="nav-link">Kontakt</NavLink>
           </div>
         </nav>
@@ -73,7 +70,6 @@ function App() {
           <Route path="/nauka" element={<Nauka />} />
           <Route path="/test" element={<Test />} />
           <Route path="/egzaminy" element={<Egzaminy />} />
-          <Route path="/konto" element={<Konto />} />
           <Route path="/kontakt" element={<Kontakt />} />
           <Route path="/gra" element={<Gra />} />
           <Route path="/rozwiazanie/1" element={<Egzamin1 />} />
@@ -107,7 +103,7 @@ function App() {
               </div>
             </div>
             <div className="copyright">
-              &copy; 2025 BioCode - Wszystkie prawa zastrzeżone
+              &copy; 2026 BioCode - Wszystkie prawa zastrzeżone
             </div>
           </div>
         </footer>

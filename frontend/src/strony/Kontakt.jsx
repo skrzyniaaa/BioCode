@@ -34,10 +34,9 @@ function Kontakt() {
           <h2>Kontakt</h2>
           <p>
             Masz pytania? Chcesz zgłosić błąd?<br />
-            Napisz do nas na Discordzie lub przez GitHub Issues.
+            Napisz do nas na Email lub przez GitHub Issues.
           </p>
           <p><strong>Email:</strong> biocode.inf04@gmail.com</p>
-          <p><strong>Discord:</strong></p>
         </div>
       </div>
 

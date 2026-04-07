@@ -10,7 +10,6 @@ function Egzamin9() {
         </p>
 
         <div className="solution-container">
-          {/* WSTĘP */}
           <section className="solution-section">
             <h3 className="section-heading">Opis zadania</h3>
             <p>
@@ -26,7 +25,6 @@ function Egzamin9() {
             </ul>
           </section>
 
-          {/* WYJAŚNIENIA KROK PO KROKU */}
           <section className="solution-section">
             <h3 className="section-heading">Wyjaśnienie krok po kroku</h3>
             <p>
@@ -87,7 +85,6 @@ if __name__ == "__main__":
             </div>
           </section>
 
-          {/* OMÓWIENIE */}
           <section className="solution-section">
             <h3 className="section-heading">Kluczowe elementy</h3>
             <div className="explanation-grid">

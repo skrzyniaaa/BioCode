@@ -60,7 +60,6 @@ body {
   color: #00ff9d;
 }
 
-/* Środek */
 .hero {
   flex: 1;
   display: flex;
@@ -115,7 +114,6 @@ body {
   color: black;
 }
 
-/* Stopka */
 .footer {
   background-color: #0a0a0a;
   padding: 40px 5% 20px;
@@ -165,7 +163,6 @@ body {
   font-size: 14px;
 }
 
-/* Styl dla pustych podstron */
 .page-container {
   flex: 1;
   padding: 60px 5%;
