@@ -27,8 +27,7 @@ pobieranie arkuszy egzaminacyjnych w formacie PDF,
 dostęp do przykładowych rozwiązań zadań,
 nauka poprzez fiszki,
 tryb gry z punktacją i systemem życia,
-pasek postępu i system serii poprawnych odpowiedzi,
-ukryta funkcjonalność (easter egg – gra).
+pasek postępu i system serii poprawnych odpowiedzi.
 
 3. Opis wykorzystanej technologii
 
@@ -87,7 +86,7 @@ Egzaminy – arkusze egzaminacyjne
 Kontakt – informacje o twórcach
 
 
-Moduł: Egzaminy
+5.1 Moduł: Egzaminy
 
 Użytkownik może:
 
@@ -95,37 +94,209 @@ przeglądać listę egzaminów z różnych lat,
 pobrać arkusz egzaminacyjny w formacie PDF,
 przejść do rozwiązania konkretnego egzaminu.
 
+Przykłądowy wycinek kodu:
 
-Moduł: Rozwiązania
+function Egzaminy() {
+  const egzaminy = [
+    {
+      id: 1,
+      tytul: "Egzamin zawodowy INF.04 2026 styczeń",
+      doPobraniaPlik: new URL('../assets/egzamin1.pdf', import.meta.url).href
+    }
+
+hendler odpowiadający za pobieranie konkretnego egzaminu:
+
+ const handlePobierz = (url, nazwa) => {
+    if (url) {
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = nazwa || url.split('/').pop();
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } else {
+      alert("Plik nie jest jeszcze dostępny.");
+    }
+  };
+
+
+5.2 Moduł: Rozwiązania
 
 Zawiera:
 
-opis zadania egzaminacyjnego,
-kod rozwiązania,
-szczegółowe wyjaśnienie działania programu,
+opis zadania egzaminacyjnego aplikacji konsolowej, 
+kod rozwiązania, szczegółowe wyjaśnienie działania programu,
 omówienie kluczowych elementów.
 
 
-Moduł: Fiszki
+5.3 Moduł: FiszkiNormalne
 
 Użytkownik:
 
-odpowiada na pytania testowe,
-wybiera jedną z czterech odpowiedzi (A–D),
-otrzymuje informację zwrotną o poprawności odpowiedzi.
-Moduł: Gra (FiszkiGra)
+ma do dyspozycji fiszkę, 
+gdzie na pierwszej stronie znajduje się pytanie,
+po kliknięciu na fiszkę wyświetla się odpowiedź.
+Użytkownik wedle uznania przy pomocy przycisków
+jest w stanie manipulować zawartością fiszek, 
+wyświetlając następną lub poprzednią fiszkę.
 
-Zawiera dodatkowe funkcje:
 
-system punktów,
-system życia (3 próby),
-licznik serii poprawnych odpowiedzi,
-pasek postępu,
-ekran końcowy z wynikiem.
-Funkcja dodatkowa
+
+function FiszkiNormalne() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [showAnswer, setShowAnswer] = useState(false);
+  const total = QUESTIONS.length;
+
+  const nextCard = () => {
+    if (currentIndex + 1 < total) {
+      setCurrentIndex(prev => prev + 1);
+      setShowAnswer(false);
+    }
+  };
+
+  const prevCard = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(prev => prev - 1);
+      setShowAnswer(false);
+    }
+  };
+
+  const toggleAnswer = () => setShowAnswer(!showAnswer);
+
+
+
+
+ <div className={`flashcard ${showAnswer ? 'flipped' : ''}`} onClick={toggleAnswer}>
+            <div className="flashcard-front">
+              <div className="flashcard-counter">
+                {currentIndex + 1} / {total}
+              </div>
+
+
+<div className="flashcard-nav">
+          <button className="btn secondary" onClick={prevCard} disabled={currentIndex === 0}>
+            ← Poprzednia
+          </button>
+          <button className="btn secondary" onClick={nextCard} disabled={currentIndex === total - 1}>
+            Następna →
+          </button>
+        </div>
+
+
+5.4 FiszkiGra
+
+Komponent FiszkiGra odpowiada za pełną logikę i interfejs interaktywnego quizu jednokrotnego wyboru, obejmując prezentację pytań, obsługę odpowiedzi, system punktacji oraz mechanikę żyć i zakończenia gry. Wykorzystuje zestaw pytań zapisanych w stałej tablicy oraz rozbudowany stan komponentu, który kontroluje aktualne pytanie, liczbę punktów, serię poprawnych odpowiedzi, pozostałe życia oraz informację o zakończeniu rozgrywki. Po wybraniu odpowiedzi komponent natychmiast ocenia jej poprawność, przyznaje punkty według algorytmu uwzględniającego rosnący bonus za serię, aktualizuje liczbę żyć i blokuje dalsze interakcje do momentu przejścia do kolejnego pytania. Interfejs dynamicznie reaguje na działania użytkownika, wyświetlając kolorowe podpowiedzi, pasek postępu, statystyki oraz komunikaty zwrotne. Po udzieleniu odpowiedzi na wszystkie pytania lub utracie wszystkich żyć komponent prezentuje ekran końcowy z podsumowaniem wyniku, najdłuższą serią oraz możliwością ponownego rozpoczęcia gry lub powrotu do sekcji testów. Całość stanowi samodzielny moduł edukacyjny, łączący elementy grywalizacji z przejrzystą logiką i czytelną strukturą, co czyni go istotnym i dopracowanym elementem projektu.
+
+
+function FiszkiGra() {
+  const navigate = useNavigate();
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [score, setScore] = useState(0);
+  const [streak, setStreak] = useState(0);
+  const [lives, setLives] = useState(3);
+  const [gameOver, setGameOver] = useState(false);
+  const [answered, setAnswered] = useState(false);
+  const [selectedOption, setSelectedOption] = useState(null);
+  const [feedback, setFeedback] = useState(null);
+
+  const currentQuestion = QUESTIONS[currentIndex];
+  const totalQuestions = QUESTIONS.length;
+  const progress = ((currentIndex + (answered ? 1 : 0)) / totalQuestions) * 100;
+
+  const handleAnswer = (optionKey) => {
+    if (answered || gameOver) return;
+    const isCorrect = (optionKey === currentQuestion.correct);
+    setSelectedOption(optionKey);
+    setAnswered(true);
+
+    if (isCorrect) {
+      const pointsEarned = 10 + streak * 5;
+      setScore(prev => prev + pointsEarned);
+      setStreak(prev => prev + 1);
+      setFeedback('correct');
+    } else {
+      setLives(prev => prev - 1);
+      setStreak(0);
+      setFeedback('wrong');
+      if (lives - 1 <= 0) {
+        setGameOver(true);
+      }
+    }
+  };
+
+  const nextQuestion = () => {
+    if (!answered && !gameOver) return;
+    if (currentIndex + 1 < totalQuestions) {
+      setCurrentIndex(prev => prev + 1);
+      setAnswered(false);
+      setSelectedOption(null);
+      setFeedback(null);
+    } else {
+      setGameOver(true);
+    }
+  };
+
+  const restartGame = () => {
+    setCurrentIndex(0);
+    setScore(0);
+    setStreak(0);
+    setLives(3);
+    setGameOver(false);
+    setAnswered(false);
+    setSelectedOption(null);
+    setFeedback(null);
+  };
+
+  if (gameOver) {
+    const won = lives > 0;
+    return (
+      <div className="quiz-panel">
+        <div className="game-end">
+          <h2>{won ? "Gratulacje! Ukończyłeś wszystkie pytania!" : "Koniec gry"}</h2>
+          <div className="final-score">Twój wynik: {score} pkt</div>
+          <div>Najdłuższa seria: {streak}</div>
+          <button className="restart-btn" onClick={restartGame}>Zagraj ponownie</button>
+          <button className="restart-btn" onClick={() => navigate('/test')} style={{ marginLeft: '10px' }}>Powrót do testów</button>
+        </div>
+      </div>
+    );
+  }
+
+
+
+5.5 Zawiera dodatkową funkcję:
 
 W aplikacji zaimplementowano ukrytą funkcję (tzw. easter egg).
-Po kliknięciu 5 razy w logo użytkownik zostaje przeniesiony do trybu gry.
+Komponent renderuje obrazek (<img>) pełniący rolę logotypu aplikacji.
+Po każdym kliknięciu w logo zwiększana jest wartość licznika kliknięć (clickCount).
+Gdy licznik osiągnie wartość 5, zostaje zresetowany, a użytkownik jest przekierowywany na stronę /gra.
+Przekierowanie realizowane jest za pomocą hooka useNavigate() z biblioteki React Router.
+
+function Logo() {
+  const [clickCount, setClickCount] = useState(0);
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    const newCount = clickCount + 1;
+    setClickCount(newCount);
+    if (newCount === 5) {
+      setClickCount(0);
+      navigate('/gra');
+    }
+  };
+
+  return (
+    <img
+      src="/src/assets/logo.jpg"
+      alt="BioCode"
+      className="logo"
+      onClick={handleClick}
+      style={{ cursor: 'pointer' }}
+    />
+  );
+}
+
+
 
 6. Link do repozytorium
 
@@ -136,11 +307,22 @@ https://github.com/skrzyniaaa/BioCode
 
 Podział pracy w projekcie:
 
+
+Adrian Dobosz:
+tworzenie dokumentacji projektu,
+testowanie działania aplikacji
+
+Mateusz Kocniowski: 
+tworzenie interfejsu użytkownika (React, CSS),
+implementacja logiki aplikacji (JavaScript),
+przygotowanie treści (egzaminy, pytania)
+
+Mateusz Skrzyszowski:
 tworzenie interfejsu użytkownika (React, CSS),
 implementacja logiki aplikacji (JavaScript),
 przygotowanie treści (egzaminy, pytania),
-testowanie działania aplikacji,
-tworzenie dokumentacji projektu.
+testowanie działania aplikacji.
+
 
 Aktywność członków zespołu widoczna jest w repozytorium GitHub w historii commitów.
 
